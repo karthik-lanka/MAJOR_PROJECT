@@ -1,0 +1,22 @@
+# Operating Systems & Concurrency Architecture
+
+## 1. Process Scheduling Algorithms
+CPU scheduling is the basis of multi-programmed operating systems. By switching the CPU among processes, the operating system can make the computer more productive.
+- First-Come, First-Served (FCFS): Simplest scheduling algorithm. Executes queued tasks sequentially. Suffers from the Convoy Effect.
+- Shortest Job First (SJF): Selects the waiting process with the smallest execution time. Optimal for minimizing average turnaround time, but prone to starvation for long processes.
+- Round Robin (RR): Allocates a fixed time slice or quantum (typically 10-100ms) to each process. Preemptive and fair for interactive systems.
+
+## 2. Deadlock & Banker's Algorithm
+A deadlock occurs when a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process.
+The four Coffman conditions necessary for deadlock are:
+1. Mutual Exclusion: At least one resource must be held in a non-shareable mode.
+2. Hold and Wait: A process must hold at least one resource and wait for additional resources.
+3. No Preemption: Resources cannot be forcibly seized from a process holding them.
+4. Circular Wait: A closed loop of processes exists where each process waits for a resource held by the next.
+
+Banker's Algorithm: Developed by Edsger Dijkstra, it tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources, and decides whether allocation should be allowed to avoid unsafe states.
+
+## 3. Virtual Memory & Paging
+Virtual memory separates user logical memory from physical memory. Paging maps virtual addresses to physical frames via the Page Table.
+- Translation Lookaside Buffer (TLB): A hardware associative cache that speeds up virtual-to-physical address translation.
+- Thrashing: When a system spends more time paging than executing instructions, caused by insufficient allocated physical frames.
